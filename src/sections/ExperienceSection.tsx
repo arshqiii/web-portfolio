@@ -1,6 +1,6 @@
 import { ExperienceCard } from '../components/ExperienceCard';
-import facultyOfComputerScienceUniversityOfIndonesiaLogo from '../assets/faculty_of_computer_science_universitas_indonesia_logo.jpg';
-import ddp0Logo from '../assets/ddp0.jpg';
+import facultyOfComputerScienceUniversityOfIndonesiaLogo from '../assets/logos/facultyOfComputerScienceUniversityOfIndonesiaLogo.jpg';
+import ddp0Logo from '../assets/logos/ddp0.jpg';
 
 const Experiences = [
   {

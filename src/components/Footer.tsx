@@ -1,4 +1,3 @@
-import { Heart } from 'lucide-react';
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -10,16 +9,10 @@ export function Footer() {
           © {currentYear} Muhammad Radhiya Arshq. All rights reserved.
         </div>
 
-        {/* Built With */}
-        <div className="flex items-center gap-2 text-sm text-white/70 font-medium">
-          Built with <Heart size={16} className="text-action-secondary fill-current animate-pulse" /> using React & Tailwind
-        </div>
-
         {/* Social Links */}
         <div className="flex gap-8">
-          <a href="#" className="text-white/70 hover:text-white transition-colors text-sm font-medium">GitHub</a>
-          <a href="#" className="text-white/70 hover:text-white transition-colors text-sm font-medium">LinkedIn</a>
-          <a href="#" className="text-white/70 hover:text-white transition-colors text-sm font-medium">Resume</a>
+          <a href="https://github.com/arshqiii" className="text-white/70 hover:text-white transition-colors text-sm font-medium">GitHub</a>
+          <a href="https://www.linkedin.com/in/mradhiyaarshq/" className="text-white/70 hover:text-white transition-colors text-sm font-medium">LinkedIn</a>
         </div>
       </div>
     </footer>

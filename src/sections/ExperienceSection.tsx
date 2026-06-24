@@ -1,14 +1,28 @@
 import { ExperienceCard } from '../components/ExperienceCard';
+import facultyOfComputerScienceUniversityOfIndonesiaLogo from '../assets/faculty_of_computer_science_universitas_indonesia_logo.jpg';
+import ddp0Logo from '../assets/ddp0.jpg';
 
-const Experiences = new Array(2).fill({
-  title: "Experience Name",
-  subtitle: "Fasilkom UI - Jan 2026 - Present",
-  points: [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend orci purus, ac ultrices dolor fringilla vel. Nam maximus sagittis elit a sodales. Mauris mattis laoreet elit, a tincidunt urna.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend orci purus, ac ultrices dolor fringilla vel. Nam maximus sagittis elit a sodales. Mauris mattis laoreet elit, a tincidunt urna.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend orci purus, ac ultrices dolor fringilla vel. Nam maximus sagittis elit a sodales. Mauris mattis laoreet elit, a tincidunt urna."
-  ]
-});
+const Experiences = [
+  {
+    logo: facultyOfComputerScienceUniversityOfIndonesiaLogo,
+    title: "TA of Security-Driven Software Development",
+    subtitle: "Fasilkom UI - Jan 2026 - Present",
+    points: [
+      "Assisted instructors in course delivery and assignment evaluation for an introductory secure software development course",
+      "Reviewed student submissions and provided feedback on software security concepts and development practices.",
+      "Collaborated with faculty members to support learning activities and assessment"
+    ]
+  },
+  {
+    logo: ddp0Logo,
+    title: "Python Student Mentor",
+    subtitle: "Dasar-Dasar Pemrograman 0 - Aug 2024 - Sep 2024",
+    points: [
+      "Mentored first-year students on Python fundamentals, basic data structures, and computational thinking concepts",
+      "Assisted students in preparing for introductory programming coursework"
+    ]
+  },
+];
 
 export function ExperienceSection() {
   return (
@@ -30,18 +44,13 @@ export function ExperienceSection() {
 
           {/* Cards Wrapper */}
           <div className="flex flex-col gap-16 relative z-10 w-full max-w-3xl mx-auto">
-            {Experiences.map((exp, index) => (
+            {Experiences.map((exp) => (
               <ExperienceCard
-                key={`exp-${index}`}
+                key={exp.title}
                 title={exp.title}
                 subtitle={exp.subtitle}
                 points={exp.points}
-                logo={
-                  // Temporary placeholder matching Apple logo color scheme
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black">
-                    <path d="M12 20.592c-2.33 0-4.08-1.583-4.08-3.996 0-2.391 1.776-4.025 4.135-4.025 2.378 0 4.08 1.634 4.08 4.025 0 2.413-1.75 3.996-4.135 3.996zm-1.87-11.238c-1.393-.418-2.39-1.637-2.39-3.13 0-1.815 1.488-3.292 3.324-3.292 1.837 0 3.325 1.477 3.325 3.292 0 1.493-.997 2.712-2.39 3.13-1.042.313-1.869 1.34-1.869 2.569v2.247c0 1.229.827 2.256 1.869 2.569 1.393.418 2.39 1.637 2.39 3.13 0 1.815-1.488 3.292-3.325 3.292-1.836 0-3.324-1.477-3.324-3.292 0-1.493.997-2.712 2.39-3.13 1.042-.313 1.869-1.34 1.869-2.569v-2.247c0-1.229-.827-2.256-1.869-2.569z" clip-rule="evenodd" fill-rule="evenodd" />
-                  </svg>
-                }
+                logo={<img src={exp.logo} alt={exp.title} className="w-full h-full object-contain" />}
               />
             ))}
           </div>

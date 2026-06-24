@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surface / Background */
+  --color-bg-main: #E4ECE7;
+  --color-surface-container-main: #FFFFFF;
+  --color-surface-container-green-1: #BFEBA9;
+  --color-surface-container-green-2: #BBF2B2;
+
+  /* Content / Text */
+  --color-text-primary: #1C2B22;
+  --color-text-secondary: #5A6B61;
+
+  /* Brand / Action */
+  --color-action-primary: #2D6A4F;
+  --color-action-secondary: #76C997;
+  --color-action-tertiary: #E8F5E9;
+}
+
+body {
+  @apply bg-bg-main text-text-primary antialiased;
+}

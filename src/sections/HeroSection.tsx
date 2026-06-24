@@ -88,16 +88,16 @@ export function HeroSection() {
 
         {/* Social Icons */}
         <div className="flex items-center gap-6 mt-4">
-          <a href="#" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
+          <a href="https://www.linkedin.com/in/mradhiyaarshq/" target="_blank" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
             <LinkedinIcon size={32} />
           </a>
-          <a href="#" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
+          <a href="https://github.com/arshqiii" target="_blank" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
             <GithubIcon size={32} />
           </a>
-          <a href="#" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
+          <a href="#" target="_blank" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
             <DiscordIcon size={36} />
           </a>
-          <a href="#" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
+          <a href="mailto:marshq23@gmail.com" className="text-white hover:text-[#BFEBA9] transition-colors drop-shadow-md">
             <Mail size={32} />
           </a>
         </div>

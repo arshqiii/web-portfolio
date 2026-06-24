@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
 
 @theme {
+  /* Font */
+  --font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-logo: "Playwrite US Trad", sans-serif;
+
   /* Surface / Background */
   --color-bg-main: #E4ECE7;
   --color-surface-container-main: #FFFFFF;
@@ -15,6 +23,8 @@
   --color-action-primary: #2D6A4F;
   --color-action-secondary: #76C997;
   --color-action-tertiary: #E8F5E9;
+  --color-action-border: #2D6A4F;
+  /* Sama dengan primary text agar terlihat kontras sbg border tag */
 }
 
 body {

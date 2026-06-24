@@ -6,7 +6,7 @@ const Experiences = [
   {
     logo: facultyOfComputerScienceUniversityOfIndonesiaLogo,
     title: "TA of Security-Driven Software Development",
-    subtitle: "Fasilkom UI - Jan 2026 - Present",
+    subtitle: "Fasilkom UI · Jan 2026 - Present",
     points: [
       "Assisted instructors in course delivery and assignment evaluation for an introductory secure software development course",
       "Reviewed student submissions and provided feedback on software security concepts and development practices.",
@@ -16,7 +16,7 @@ const Experiences = [
   {
     logo: ddp0Logo,
     title: "Python Student Mentor",
-    subtitle: "Dasar-Dasar Pemrograman 0 - Aug 2024 - Sep 2024",
+    subtitle: "Dasar-Dasar Pemrograman 0 · Aug 2024 - Sep 2024",
     points: [
       "Mentored first-year students on Python fundamentals, basic data structures, and computational thinking concepts",
       "Assisted students in preparing for introductory programming coursework"

@@ -26,7 +26,7 @@ export interface TagProps
   extends HTMLAttributes<HTMLDivElement>,
   VariantProps<typeof tagVariants> { }
 
-export function Tag({ className, variant, size, children, ...props }: TagProps) {
+export function Tag({ className, variant, size, children, ...props }: Readonly<TagProps>) {
   return (
     <div className={cn(tagVariants({ variant, size, className }))} {...props}>
       {children}

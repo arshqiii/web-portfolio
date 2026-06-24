@@ -28,8 +28,8 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  icon?: ReactNode;
-  iconPosition?: 'left' | 'right';
+  readonly icon?: ReactNode;
+  readonly iconPosition?: 'left' | 'right';
 }
 
 export function Button({
@@ -40,7 +40,7 @@ export function Button({
   iconPosition = 'left',
   children,
   ...props
-}: ButtonProps) {
+}: Readonly<ButtonProps>) {
   return (
     <button
       className={cn(buttonVariants({ variant, size, className }))}

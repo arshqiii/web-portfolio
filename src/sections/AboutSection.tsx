@@ -46,6 +46,35 @@ export function AboutSection() {
           </p>
         </div>
       </div>
+
+      {/* Tech Stack Marquee (Circular scrolling) */}
+      <div className="mt-24 w-full bg-[#5A6B61] py-6 relative flex items-center">
+        {/* Left & Right Fading Gradients for smooth infinite scroll effect */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#5A6B61] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#5A6B61] to-transparent z-10 pointer-events-none"></div>
+
+        <div className="flex w-max animate-marquee hover:pause whitespace-nowrap">
+          {/* Duplicate array twice to ensure seamless looping */}
+          {[...techStack, ...techStack, ...techStack].map((tech, index) => {
+            const uniqueKey = `${tech.name}-${index}`;
+            return (
+              <div
+                key={uniqueKey}
+                className="flex items-center gap-3 bg-surface-container-main px-6 py-3 rounded-xl mx-3 shadow-md border-b-4 border-action-primary/20 transition-transform hover:-translate-y-1 cursor-default"
+              >
+                {/* Temporary placeholder icon container */}
+                <div
+                  className="w-8 h-8 rounded-md flex items-center justify-center text-white"
+                  style={{ backgroundColor: tech.color }}
+                >
+                  <Terminal size={18} strokeWidth={2.5} />
+                </div>
+                <span className="text-text-primary font-bold text-lg">{tech.name}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }

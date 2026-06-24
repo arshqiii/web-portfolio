@@ -54,7 +54,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen min-h-[600px] flex items-center pt-24"
+      className="relative w-full min-h-screen flex items-center pt-24 pb-16"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',

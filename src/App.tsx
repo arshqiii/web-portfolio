@@ -1,6 +1,8 @@
 import Navbar from "./components/navbar";
 import { HeroSection } from "./sections/HeroSection";
 import { AboutSection } from "./sections/AboutSection";
+import { ProjectsSection } from "./sections/ProjectsSection";
+import { ExperienceSection } from "./sections/ExperienceSection";
 
 export default function App() {
   return (
@@ -9,6 +11,8 @@ export default function App() {
       <main>
         <HeroSection />
         <AboutSection />
+        <ProjectsSection />
+        <ExperienceSection />
       </main>
     </div>
   );

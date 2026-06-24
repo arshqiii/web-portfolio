@@ -57,7 +57,7 @@ export function ProjectCard({
 
       {/* Content Area */}
       <div className="p-6 md:p-8 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold text-text-primary mb-4">{title}</h3>
+        <h3 className="text-xl font-bold text-text-primary mb-4">{title}</h3>
         <p className="text-text-secondary leading-relaxed mb-8 flex-grow">
           {description}
         </p>
@@ -65,9 +65,9 @@ export function ProjectCard({
         {/* Footer Area (Tags and Links) */}
         <div className="flex items-end justify-between mt-auto">
           {/* Tags */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <Tag key={tag} size="md">
+              <Tag key={tag} size="sm">
                 {tag}
               </Tag>
             ))}

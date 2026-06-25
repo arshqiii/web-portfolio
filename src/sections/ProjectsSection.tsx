@@ -5,6 +5,7 @@ import rsaImage from '../assets/project-images/rsa-oaep.png';
 import ngandungImage from '../assets/project-images/ngandung.jpeg';
 import etchImage from '../assets/project-images/etch-a-sketch.png';
 import webPortfolioImage from '../assets/project-images/portfolio.png';
+import { FadeIn } from '../components/FadeIn';
 
 const Projects = [
   {
@@ -55,24 +56,25 @@ const Projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full bg-bg-main py-24">
+    <section id="projects" className="w-full bg-bg-main py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="mb-12 inline-block">
+        <FadeIn direction="up" className="mb-12 inline-block">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary">Projects.</h2>
           <div className="h-1.5 w-24 bg-text-primary mt-2 rounded-full"></div>
-        </div>
+        </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              imageUrl={project.imageUrl}
-              githubUrl={project.githubUrl}
-              liveUrl={project.liveUrl}
-            />
+          {Projects.map((project, index) => (
+            <FadeIn key={project.title} delay={index * 100} direction="up">
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                imageUrl={project.imageUrl}
+                githubUrl={project.githubUrl}
+                liveUrl={project.liveUrl}
+              />
+            </FadeIn>
           ))}
         </div>
       </div>

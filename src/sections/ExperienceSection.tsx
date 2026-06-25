@@ -1,6 +1,7 @@
 import { ExperienceCard } from '../components/ExperienceCard';
 import facultyOfComputerScienceUniversityOfIndonesiaLogo from '../assets/logos/faculty_of_computer_science_universitas_indonesia_logo.jpg';
 import ddp0Logo from '../assets/logos/ddp0.jpg';
+import { FadeIn } from '../components/FadeIn';
 
 const Experiences = [
   {
@@ -26,12 +27,12 @@ const Experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="w-full bg-bg-main py-24 overflow-hidden">
+    <section id="experience" className="w-full bg-bg-main py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="mb-16 inline-block">
+        <FadeIn direction="up" className="mb-16 inline-block">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary">Experiences.</h2>
           <div className="h-1.5 w-32 bg-text-primary mt-2 rounded-full"></div>
-        </div>
+        </FadeIn>
 
         {/* Timeline Container */}
         <div className="relative pt-10 pb-10">
@@ -44,14 +45,15 @@ export function ExperienceSection() {
 
           {/* Cards Wrapper */}
           <div className="flex flex-col gap-16 relative z-10 w-full max-w-3xl mx-auto">
-            {Experiences.map((exp) => (
-              <ExperienceCard
-                key={exp.title}
-                title={exp.title}
-                subtitle={exp.subtitle}
-                points={exp.points}
-                logo={<img src={exp.logo} alt={exp.title} className="w-full h-full object-contain" />}
-              />
+            {Experiences.map((exp, index) => (
+              <FadeIn key={exp.title} delay={index * 100} direction="up">
+                <ExperienceCard
+                  title={exp.title}
+                  subtitle={exp.subtitle}
+                  points={exp.points}
+                  logo={<img src={exp.logo} alt={exp.title} className="w-full h-full object-contain" />}
+                />
+              </FadeIn>
             ))}
           </div>
         </div>

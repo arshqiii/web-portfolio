@@ -1,32 +1,37 @@
 import { ContactForm } from '../components/ContactForm';
 import { Mail, MapPin } from 'lucide-react';
+import { FadeIn } from '../components/FadeIn';
 
 export function ContactSection() {
   return (
-    <section id="contact" className="w-full bg-bg-main pt-24 pb-32">
+    <section id="contact" className="w-full bg-bg-main pt-16 pb-32">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col lg:flex-row gap-16 lg:gap-24 items-center lg:items-start">
 
         {/* Left Column: Text */}
-        <div className="flex flex-col flex-1 w-full text-center lg:text-left pt-4">
-          <div className="mb-8 inline-block mx-auto lg:mx-0">
+        <div className="flex flex-col flex-1 w-full text-left pt-4">
+          <FadeIn direction="left" className="mb-8 inline-block">
             <h2 className="text-4xl md:text-5xl font-bold text-text-primary">Contact me.</h2>
-            <div className="h-1.5 w-24 bg-text-primary mt-2 rounded-full mx-auto lg:mx-0"></div>
-          </div>
+            <div className="h-1.5 w-24 bg-text-primary mt-2 rounded-full"></div>
+          </FadeIn>
 
-          <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-6">
-            Let's build something great together.
-          </h3>
+          <FadeIn delay={150} direction="left">
+            <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-6">
+              Let's build something great together.
+            </h3>
+          </FadeIn>
 
-          <p className="text-lg text-text-secondary leading-relaxed mb-6">
-            Whether you're looking for a dedicated software engineer, a passionate intern, or just have a question, feel free to reach out!
-          </p>
+          <FadeIn delay={300} direction="left">
+            <p className="text-lg text-text-secondary leading-relaxed mb-6">
+              Whether you're looking for a dedicated software engineer, a passionate intern, or just have a question, feel free to reach out!
+            </p>
 
-          <p className="text-lg text-text-secondary leading-relaxed mb-12">
-            I'll make sure to get back to you as soon as possible.
-          </p>
+            <p className="text-lg text-text-secondary leading-relaxed mb-12">
+              I'll make sure to get back to you as soon as possible.
+            </p>
+          </FadeIn>
 
           {/* Quick Contact Info */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center lg:justify-start">
+          <FadeIn delay={450} direction="left" className="flex flex-col sm:flex-row gap-8">
             <div className="flex items-center gap-4 text-text-primary font-medium group">
               <div className="w-12 h-12 rounded-full bg-action-tertiary flex items-center justify-center border border-action-primary/20 group-hover:bg-action-secondary transition-colors">
                 <Mail size={22} className="text-action-primary group-hover:text-white transition-colors" />
@@ -41,13 +46,13 @@ export function ContactSection() {
               </div>
               <span className="text-lg">Jakarta, Indonesia</span>
             </div>
-          </div>
+          </FadeIn>
         </div>
 
         {/* Right Column: Form */}
-        <div className="w-full lg:w-[500px] xl:w-[550px] flex-shrink-0">
+        <FadeIn delay={300} direction="right" className="w-full lg:w-[500px] xl:w-[550px] flex-shrink-0">
           <ContactForm />
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

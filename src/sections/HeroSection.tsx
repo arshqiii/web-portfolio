@@ -1,6 +1,7 @@
 import { Download, Mail } from 'lucide-react';
 import bgImage from '../assets/background-hero.jpg';
 import { Button } from '../components/Button';
+import { FadeIn } from '../components/FadeIn';
 
 import linkedinSvg from '../assets/social-icons/linkedin-icon.svg';
 import githubSvg from '../assets/social-icons/github-icon.svg';
@@ -27,23 +28,24 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 w-full flex flex-col items-start gap-6 mt-12 md:mt-24">
-        {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg leading-tight">
-          Hi, I'm Muhammad<br />
-          Radhiya <span className="text-[#BFEBA9]">Arshq</span>.
-        </h1>
+        <FadeIn delay={50} direction="up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg leading-tight">
+            Hi, I'm Muhammad<br />
+            Radhiya <span className="text-[#BFEBA9]">Arshq</span>.
+          </h1>
+        </FadeIn>
 
         {/* Subtitle */}
-        <div className="w-full max-w-2xl">
+        <FadeIn delay={100} direction="up" className="w-full max-w-2xl">
           <p className="text-xl md:text-2xl text-white drop-shadow-md mb-2">
             I'm a CS Undergraduate
           </p>
           {/* White line separator */}
           <div className="h-[2px] w-full bg-white/80 rounded-full" />
-        </div>
+        </FadeIn>
 
         {/* Social Icons */}
-        <div className="flex items-center gap-6 mt-4">
+        <FadeIn delay={300} direction="up" className="flex items-center gap-6 mt-4">
           <a href="https://www.linkedin.com/in/mradhiyaarshq/" target="_blank" rel="noreferrer" className="hover:scale-110 hover:opacity-80 transition-all drop-shadow-md">
             <img src={linkedinSvg} alt="LinkedIn" className="w-8 h-8 object-contain" />
           </a>
@@ -56,18 +58,20 @@ export function HeroSection() {
           <a href="mailto:marshq23@gmail.com" className="text-white hover:scale-110 hover:opacity-80 transition-all drop-shadow-md">
             <Mail size={32} />
           </a>
-        </div>
+        </FadeIn>
 
         {/* Download Button */}
-        <a href="/CV.pdf" download="Muhammad_Radhiya_CV.pdf" className="mt-6">
-          <Button
-            icon={<Download size={20} />}
-            size="lg"
-            className="bg-[#BFEBA9] hover:bg-[#aee692] text-action-primary shadow-lg border-none"
-          >
-            Download CV
-          </Button>
-        </a>
+        <FadeIn delay={100} direction="up">
+          <a href="/CV.pdf" download="Muhammad_Radhiya_CV.pdf" className="mt-6 inline-block">
+            <Button
+              icon={<Download size={20} />}
+              size="lg"
+              className="bg-[#BFEBA9] hover:bg-[#aee692] text-action-primary shadow-lg border-none"
+            >
+              Download CV
+            </Button>
+          </a>
+        </FadeIn>
       </div>
     </section>
   );

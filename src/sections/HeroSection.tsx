@@ -1,4 +1,5 @@
 import { Download, Mail } from 'lucide-react';
+import Typewriter from 'typewriter-effect'
 import bgImage from '../assets/background-hero.jpg';
 import { Button } from '../components/Button';
 import { FadeIn } from '../components/FadeIn';
@@ -19,13 +20,19 @@ export function HeroSection() {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Gradient Overlay based on Figma design */}
+      {/* Base dark overlay */}
+      <div className="absolute inset-0 bg-[#132219]/30 md:bg-transparent pointer-events-none" />
+
+      {/* Gradient Overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(90deg, rgba(19, 34, 25, 0.9) 0%, rgba(19, 34, 25, 0.7) 35%, rgba(28, 43, 34, 0) 70%)'
+          background: 'linear-gradient(90deg, rgba(19, 34, 25, 0.9) 0%, rgba(19, 34, 25, 0.6) 40%, rgba(19, 34, 25, 0) 100%)'
         }}
       />
+
+      {/* Bottom fade to blend with the next section (bg-main) */}
+      <div className="absolute -bottom-1 left-0 w-full h-[30vh] bg-gradient-to-t from-bg-main via-bg-main/80 to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 w-full flex flex-col items-start gap-6 mt-12 md:mt-24">
         <FadeIn delay={50} direction="up">
@@ -36,10 +43,27 @@ export function HeroSection() {
         </FadeIn>
 
         {/* Subtitle */}
-        <FadeIn delay={100} direction="up" className="w-full max-w-2xl">
-          <p className="text-xl md:text-2xl text-white drop-shadow-md mb-2">
-            I'm a CS Undergraduate
-          </p>
+        <FadeIn delay={100} direction="up" className="w-fit">
+          {/* w-fit memastikan garis pembatas di bawahnya memotong pas sesuai teks terbesar */}
+          <div className="text-xl md:text-2xl text-white drop-shadow-md mb-2 font-medium flex gap-2">
+            <span>I'm a</span>
+            <span className="text-[#BFEBA9] font-bold">
+              <Typewriter
+                options={{
+                  strings: [
+                    'CS Undergraduate.',
+                    'Full Stack Developer.',
+                    'Backend Enthusiast.',
+                    'Software Engineer.'
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 60,
+                  deleteSpeed: 40,
+                }}
+              />
+            </span>
+          </div>
           {/* White line separator */}
           <div className="h-[2px] w-full bg-white/80 rounded-full" />
         </FadeIn>

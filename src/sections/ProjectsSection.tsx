@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ProjectCard } from '../components/ProjectCard';
 import gcaImage from '../assets/project-images/gca-academy.png';
 import galleryImage from '../assets/project-images/gallery-fasilkom.png';
@@ -6,6 +7,8 @@ import ngandungImage from '../assets/project-images/ngandung.jpeg';
 import etchImage from '../assets/project-images/etch-a-sketch.png';
 import webPortfolioImage from '../assets/project-images/portfolio.png';
 import { FadeIn } from '../components/FadeIn';
+import { Button } from '../components/Button';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const Projects = [
   {
@@ -55,6 +58,8 @@ const Projects = [
 ];
 
 export function ProjectsSection() {
+  const [showAll, setShowAll] = useState(false);
+
   return (
     <section id="projects" className="w-full bg-bg-main py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
@@ -63,8 +68,9 @@ export function ProjectsSection() {
           <div className="h-1.5 w-24 bg-text-primary mt-2 rounded-full"></div>
         </FadeIn>
 
+        {/* First 3 Projects Always Visible */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Projects.map((project, index) => (
+          {Projects.slice(0, 3).map((project, index) => (
             <FadeIn key={project.title} delay={index * 100} direction="up">
               <ProjectCard
                 title={project.title}
@@ -77,6 +83,41 @@ export function ProjectsSection() {
             </FadeIn>
           ))}
         </div>
+
+        {/* Remaining Projects with Smooth Height Transition */}
+        <div
+          className={`grid transition-all duration-700 ease-in-out ${showAll ? "grid-rows-[1fr] opacity-100 mt-8" : "grid-rows-[0fr] opacity-0 mt-0"
+            }`}
+        >
+          <div className="overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {Projects.slice(3).map((project, index) => (
+                <FadeIn key={project.title} delay={(index % 3) * 100} direction="up">
+                  <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    tags={project.tags}
+                    imageUrl={project.imageUrl}
+                    githubUrl={project.githubUrl}
+                    liveUrl={project.liveUrl}
+                  />
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {Projects.length > 3 && (
+          <FadeIn direction="up" className="mt-12 flex justify-center">
+            <Button
+              onClick={() => setShowAll(!showAll)}
+              icon={showAll ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+              className="bg-action-tertiary hover:bg-action-secondary text-text-primary border border-action-primary/20 shadow-sm"
+            >
+              {showAll ? "Show Less" : "Show More"}
+            </Button>
+          </FadeIn>
+        )}
       </div>
     </section>
   );

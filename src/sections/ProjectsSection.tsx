@@ -30,7 +30,7 @@ const Projects = [
     description: "My personal web portfolio designed with a modern aesthetic to showcase my skills, experiences, and projects.",
     tags: ["React", "Tailwind", "Typescript", "Bun"],
     githubUrl: "https://github.com/arshqiii/web-portfolio",
-    liveUrl: "#",
+    liveUrl: "https://mradhiyaarshq.vercel.app/",
     imageUrl: webPortfolioImage
   },
   {

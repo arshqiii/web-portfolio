@@ -31,8 +31,8 @@ export function AboutSection() {
           </div>
 
           <p className="text-lg text-text-secondary leading-relaxed text-justify">
-            I'm a Computer Science student with a passion for backend and full-stack development.
-            I have experience building web applications using technologies like Django, Spring Boot, and PostgreSQL.
+            I'm a Computer Science student with a passion for backend and full-stack software development.
+            I have experience building web applications utilizing technologies like Django, Spring Boot, and PostgreSQL.
             I'm always eager to learn new technologies and improve my skills.
           </p>
         </FadeIn>

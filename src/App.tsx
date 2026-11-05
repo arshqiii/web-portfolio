@@ -13,8 +13,8 @@ export default function App() {
       <main className="flex-grow">
         <HeroSection />
         <AboutSection />
-        <ProjectsSection />
         <ExperienceSection />
+        <ProjectsSection />
         <ContactSection />
       </main>
       <Footer />

@@ -13,7 +13,7 @@ export function ContactSection() {
             <Mail size={16} />
             Contact Me
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-text-primary tracking-tight mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-text-primary tracking-tight mb-6">
             Let's build something <br className="hidden md:block" />
             <span className="text-action-primary">extraordinary.</span>
           </h2>

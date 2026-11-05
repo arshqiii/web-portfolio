@@ -1,13 +1,37 @@
 import { ExperienceCard } from '../components/ExperienceCard';
 import facultyOfComputerScienceUniversityOfIndonesiaLogo from '../assets/logos/faculty_of_computer_science_universitas_indonesia_logo.jpg';
 import ddp0Logo from '../assets/logos/ddp0.jpg';
+import gcaLogo from '../assets/logos/gca-logo.jpg';
+import pplLogo from '../assets/logos/ppl.png';
 import { FadeIn } from '../components/FadeIn';
 
 const Experiences = [
   {
+    logo: gcaLogo,
+    title: "Backend Developer",
+    subtitle: "Garuda Cendekia Academy (Freelance) · Feb 2026 - Present",
+    points: [
+      "Designed and built an end-to-end school academic information system using Spring Boot and PostgreSQL.",
+      "Implemented secure authentication and authorization using Spring Security and JWT, and integrated email automation services via Resend API.",
+      "Designed and developed role-based, paginated REST APIs for features across different user roles.",
+      "Worked directly with stakeholders & a team of developers to translate business requirements into technical solutions."
+    ]
+  },
+  {
+    logo: pplLogo,
+    title: "Full Stack Engineer",
+    subtitle: "Software Development Project · Feb 2026 - June 2026",
+    points: [
+      "Collaborated in an agile cross-functional team running weekly Scrums and sprints to build and launch an interactive campus event web platform, delivering end-to-end features from Django REST Framework backends to React/TypeScript interfaces.",
+      "Applied Test-Driven Development (TDD) across the stack, writing unit and integration suites to safeguard business logic, capture edge cases, and maintain high test coverage before code review.",
+      "Conducted load, stress, and spike testing using k6, leveraging Grafana and Prometheus metrics to identify and optimize performance bottlenecks and improve system reliability.",
+      "Maintained GitLab CI/CD pipelines and improved code quality through SonarQube static analysis and security checks"
+    ]
+  },
+  {
     logo: facultyOfComputerScienceUniversityOfIndonesiaLogo,
     title: "TA of Security-Driven Software Development",
-    subtitle: "Fasilkom UI · Jan 2026 - Present",
+    subtitle: "Fasilkom UI · Jan 2026 - June 2026",
     points: [
       "Assisted instructors in course delivery and assignment evaluation for an introductory secure software development course",
       "Reviewed student submissions and provided feedback on software security concepts and development practices.",
@@ -44,7 +68,7 @@ export function ExperienceSection() {
           <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-5 h-5 rounded-full bg-text-primary"></div>
 
           {/* Cards Wrapper */}
-          <div className="flex flex-col gap-16 relative z-10 w-full max-w-3xl mx-auto">
+          <div className="flex flex-col gap-16 relative z-10 w-full max-w-4xl mx-auto">
             {Experiences.map((exp, index) => (
               <FadeIn key={exp.title} delay={index * 100} direction="up">
                 <ExperienceCard
